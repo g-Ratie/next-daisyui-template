@@ -1,4 +1,5 @@
 const path = require("path")
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 
 module.exports = {
   stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
@@ -32,6 +33,10 @@ module.exports = {
       ...config.resolve?.alias,
       "@": [path.resolve(__dirname, "../src/"), path.resolve(__dirname, "../")],
     }
+    config.resolve.modules = [
+      ...(config.resolve.modules || []),
+      path.resolve(__dirname, "../src"),
+    ]
 
     /**
      * Fixes font import with /
@@ -41,7 +46,10 @@ module.exports = {
       path.resolve(__dirname, "../public"),
       "node_modules",
     ]
-
+    config.resolve.plugins = [
+      ...(config.resolve.plugins || []),
+      new TsconfigPathsPlugin(),
+    ]
     return config
   },
 }
