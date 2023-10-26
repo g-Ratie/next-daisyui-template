@@ -9,7 +9,9 @@
     "prepare": "husky install",
     "sb": "start-storybook -p 6006",
     "build-sb": "build-storybook",
-    "sd-gen": "scaffdog generate"
+    "sd-gen": "scaffdog generate",
+    "build-storybook": "build-storybook -o ./storybook-build"
+
   },
   "dependencies": {
     "@vercel/analytics": "^1.0.1",
