@@ -1,5 +1,10 @@
 name: Release Storybook to GitHubPages
 
+permissions:
+  actions: write
+  checks: write
+  contents: write
+
 on:
   push:
     branches:
