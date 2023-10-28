@@ -1,8 +1,8 @@
 import type { NextPage, GetServerSideProps } from "next"
-import Home from "components/template"
+import { WelcomePage } from "components/templates/WelcomePage"
 
 const Page: NextPage = () => {
-  return <Home />
+  return <WelcomePage />
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
